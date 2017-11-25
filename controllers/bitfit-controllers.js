@@ -16,6 +16,30 @@ bitfitController.index = (req, res) => {
     });
 };
 
+
+// var request = require('request');
+// request('http://www.google.com', function (error, response, body) {
+//   if (!error && response.statusCode == 200) {
+//     console.log(body) // Print the google web page.
+//   }
+// })
+
+
+// bitfitController.testGET = (req, res) => {
+//   Bitfit.findById(req.params.id)
+//     .then(bitfit => {
+//       res.json({
+//         message: 'ok',
+//         data: bitfit,
+//       });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json({ err });
+//     });
+// };
+
+
 // bitfitController.show = (req, res) => {
 //   Bitfit.findById(req.params.id)
 //     .then(bitfit => {

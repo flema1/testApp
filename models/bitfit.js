@@ -6,6 +6,19 @@ Bitfit.findAll = () => {
   return db.query(`SELECT * FROM testingUsers`);
 };
 
+
+Bitfit.create = user => {
+   console.log (" model - User.create = user  ---->");
+  return db.one(`
+    INSERT INTO testingUsers
+    (username, email, password_digest, firstname, token)
+    VALUES ($1, $2, $3, $4, $5)
+    RETURNING *
+  `, [user.username, user.email, user.password_digest, user.firstname, user.token]);
+};
+
+
+
 Bitfit.findById = id => {
   return db.oneOrNone(
     `
@@ -16,17 +29,17 @@ Bitfit.findById = id => {
   );
 };
 
-Bitfit.create = bitfit => {
-  return db.one(
-    `
-    INSERT INTO bitfit
-    (1, 2, 3, 4, 5)
-    VALUES ($1, $2, $3, $4, $5)
-    RETURNING *
-  `,
-    [ 1,2,3,4]//these are place holders
-  );
-};
+// Bitfit.create = bitfit => {
+//   return db.one(
+//     `
+//     INSERT INTO bitfit
+//     (1, 2, 3, 4, 5)
+//     VALUES ($1, $2, $3, $4, $5)
+//     RETURNING *
+//   `,
+//     [ 1,2,3,4]//these are place holders
+//   );
+// };
 
 Bitfit.update = (bitfit, id) => {
   return db.one(

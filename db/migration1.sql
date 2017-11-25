@@ -1,6 +1,6 @@
 -- DROP DATABASE reactshare_dev;
 CREATE DATABASE test_dev;
- \c test_dev;
+--  \c test_dev;
 
 
 
